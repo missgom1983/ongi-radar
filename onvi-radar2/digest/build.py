@@ -5,7 +5,7 @@ from datetime import date
 HANJI, CHEONGJA, SIMHAE, SIMYA, NOEUL = "#F5F1E6", "#4FB89E", "#2C4A6B", "#1F2A3A", "#D9B88C"
 ANGAE = "#C8E5DB"
 ACTION_COLOR = {"긴급검토": "#C0392B", "피치덱반영": CHEONGJA, "모니터링": SIMHAE, "무시": "#999"}
-BUCKET_ORDER = ["직접경쟁", "인접", "규제·법무", "카테고리신호", "논문근거"]
+BUCKET_ORDER = ["직접경쟁", "지원사업", "규제·법무", "인접", "카테고리신호", "논문근거"]
 
 
 def build_html(items, editor=None, trend=None) -> str:

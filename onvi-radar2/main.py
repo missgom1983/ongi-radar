@@ -5,7 +5,7 @@
 import yaml
 from datetime import date
 
-from collectors import naver_news, g2b, papers, kipris
+from collectors import naver_news, g2b, papers, kipris, gov_grants
 from pipeline.dedupe import dedupe
 from pipeline import memory
 from pipeline.score import score_items
@@ -33,6 +33,7 @@ def main():
     items += g2b.collect(cfg["g2b_keywords"], look)
     items += papers.collect(cfg["paper_topics"], look)
     items += kipris.collect(cfg.get("patent_applicants", []))
+    items += gov_grants.collect(cfg.get("grant_keywords", []))
 
     # 2) 중복제거 ---------------------------------------------------
     items = dedupe(items)
