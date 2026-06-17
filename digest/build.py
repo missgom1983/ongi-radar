@@ -5,7 +5,7 @@ from datetime import date
 HANJI, CHEONGJA, SIMHAE, SIMYA, NOEUL = "#F5F1E6", "#4FB89E", "#2C4A6B", "#1F2A3A", "#D9B88C"
 ANGAE = "#C8E5DB"
 ACTION_COLOR = {"긴급검토": "#C0392B", "피치덱반영": CHEONGJA, "모니터링": SIMHAE, "무시": "#999"}
-BUCKET_ORDER = ["직접경쟁", "인접", "규제·법무", "카테고리신호", "논문근거"]
+BUCKET_ORDER = ["직접경쟁", "지원사업", "규제·법무", "인접", "카테고리신호", "논문근거"]
 
 
 def build_html(items, editor=None, trend=None) -> str:
@@ -64,7 +64,12 @@ def build_html(items, editor=None, trend=None) -> str:
                   f'border-radius:8px;margin-bottom:16px;font-weight:700;">'
                   f'⚠ 긴급검토 {len(urgent)}건 — 즉시 확인 필요</div>')
 
-    return f"""<!doctype html><html><body style="margin:0;background:{HANJI};
+    return f"""<!doctype html><html lang="ko"><head>
+      <meta charset="utf-8">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>온비 레이더 · 주간 브리프</title>
+      </head><body style="margin:0;background:{HANJI};
       font-family:Pretendard,-apple-system,sans-serif;padding:24px;">
       <div style="max-width:640px;margin:0 auto;">
         <div style="color:{CHEONGJA};font-weight:800;font-size:22px;">온비 레이더 · 주간 브리프</div>
